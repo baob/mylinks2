@@ -45,7 +45,10 @@
 #   def some_helper
 #     "Helping"
 #   end
-# end
+#- end
+
+require_relative 'lib/mylinks_helpers'
+helpers MylinksHelpers
 
 set :css_dir, 'stylesheets'
 
