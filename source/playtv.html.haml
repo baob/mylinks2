@@ -1,0 +1,15 @@
+---
+title: Play - TV
+---
+- data = yaml_load_files('playtv')
+%table{border: 1, cellpadding: 9}
+
+  %tr
+    = partial 'td', locals: {rows: 2, sub: :nav}
+
+    = partial 'td', locals: {rows: 1, content: data[:downloads]}
+    = partial 'td', locals: {rows: 2, content: data[:tv]}
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:ents_events]}
+

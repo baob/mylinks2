@@ -1,0 +1,18 @@
+---
+title: dailyplay
+---
+- data = yaml_load_files('dailyplay')
+%table{border: 1, cellpadding: 9}
+
+  %tr
+    = partial 'td', locals: {rows: 3, sub: :nav}
+
+    = partial 'td', locals: {rows: 1, content: data[:discovery]}
+    = partial 'td', locals: {rows: 2, content: data[:ents_events]}
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:discovery_music]}
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:discovery_film_comics]}
+    = partial 'td', locals: {rows: 1, content: data[:buy_sell]}

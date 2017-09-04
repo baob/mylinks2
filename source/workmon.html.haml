@@ -1,0 +1,27 @@
+---
+title: Work Monitoring
+---
+- data = yaml_load_files('work_nat_mon')
+%table{border: 1, cellpadding: 9}
+
+  %tr
+    = partial 'td', locals: {rows: 4, sub: :nav}
+    %th
+      %h2
+        Sherlock
+    %th
+      %h2
+        Subjects
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:sherlock_dashing]}
+    = partial 'td', locals: {rows: 1, content: data[:subjects_dashing]}
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:sherlock_grafana]}
+    = partial 'td', locals: {rows: 1, content: data[:subjects_grafana]}
+
+  %tr
+    = partial 'td', locals: {rows: 1, content: data[:sherlock_nagios]}
+    = partial 'td', locals: {rows: 1, content: data[:subjects_nagios]}
+

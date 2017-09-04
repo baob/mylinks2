@@ -1,0 +1,23 @@
+---
+title: CELL
+---
+
+- target       = locals['target'] || '_blank'
+- local_title  = locals['title'] || 'No Title Given'
+- elements     = locals['elements'] || []
+
+%h2
+  = local_title
+
+%table{border: 0}
+  - elements.each do |elem|
+    %tr
+      %td
+        - if elem.is_a? String
+          - if elem == 'hr'
+            %hr
+        - else
+          - elem.each do |tag, attribs|
+            - if tag == 'anchor'
+              %a{href: attribs['href'], target: target}
+                = attribs['text']
